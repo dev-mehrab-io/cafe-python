@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    {% include 'includes/head.html' %}
+    <title>جزئیات نوشیدنی | کافه پایتون</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>☕ کافه پایتون</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="detail-card">
+            <div class="detail-image">
+                {% if drink.image %}
+                    <img src="{{ drink.image.url }}" alt="{{ drink.name }}">
+                {% else %}
+                    <img src="{% static 'img/default.jpg' %}" alt="{{ drink.name }}">
+                {% endif %}
+            </div>
+            <div class="detail-info">
+                <h2 class="drink-title">{{ drink.name }}</h2>
+                <p class="price">{{ drink.price }} تومان</p>
+
+                <div class="ingredients-box">
+                    <strong>ترکیبات:</strong>
+                    <p>{{ drink.ingredients }}</p>
+                </div>
+
+                <div class="status-box">
+                    {% if drink.is_available %}
+                        <span class="badge available">✅ موجود است</span>
+                    {% else %}
+                        <span class="badge out-of-stock">تمام شد</span>
+                    {% endif%}
+                </div>
+
+                <a href="/menu/drinks" class="btn btn-outline">🔙 بازگشت به منو</a>
+            </div>
+        </div>
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+</body>
+</html>

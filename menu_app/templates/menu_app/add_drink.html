@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    {% include 'includes/head.html' %}
+    <title>افزودن آیتم | کافه پایتون</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>☕ پنل مدیریت منو</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">افزودن نوشیدنی جدید</h2>
+
+        <div class="form-wrapper">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>نام نوشیدنی:</label>
+                    <input type="text" name="name" placeholder="مثلاً: موکاچینو" required>
+                </div>
+
+                <div class="form-group">
+                    <label>قیمت (تومان):</label>
+                    <input type="number" name="price" placeholder="مثلاً: 95000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ترکیبات:</label>
+                    <input type="text" name="ingredients" placeholder="اسپرسو، شیر، شکلات" required>
+                </div>
+
+                <div class="form-group">
+                    <label>عکس نوشیدنی:</label>
+                    <input type="file" name="image" accept="image/*" required>
+                </div>
+
+                <button type="submit" class="btn btn-full">ثبت در منو</button>
+            </form>
+        </div>
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+</body>
+</html>

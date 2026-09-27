@@ -1,0 +1,154 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: Tahoma, Arial, sans-serif; 
+    background-color: #1a1a1a; 
+    color: #fff; 
+    line-height: 1.6; 
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* --- هدر و فوتر --- */
+.header { 
+    background-color: #111; 
+    padding: 40px 0; 
+    text-align: center; 
+    border-bottom: 3px solid #d4af37; 
+}
+
+.header h1 { color: #d4af37; font-size: 2.5rem; margin-bottom: 5px; }
+.header p { color: #aaa; font-size: 1.1rem; }
+
+.footer { 
+    text-align: center; 
+    padding: 20px; 
+    background: #111; 
+    color: #777; 
+    border-top: 1px solid #333;
+    margin-top: 50px;
+}
+
+/* --- دکمه‌های عمومی --- */
+.btn {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #111;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover { background-color: #b5952f; transform: scale(1.05); }
+
+.btn-outline {
+    background-color: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+}
+.btn-outline:hover { background-color: #d4af37; color: #111; }
+
+.btn-full { width: 100%; margin-top: 10px; }
+
+/* --- صفحه خانه (Hero Section) --- */
+.hero-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=1200&q=80') center/cover;
+    padding: 40px 20px;
+    border-bottom: 1px solid #333;
+}
+.hero-content h2 { font-size: 3rem; color: #d4af37; margin-bottom: 15px; }
+.hero-content p { font-size: 1.2rem; color: #eee; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* --- صفحه منو --- */
+.section-title { text-align: center; font-size: 2rem; margin: 40px 0; color: #fff; }
+
+.menu-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
+
+.menu-card { 
+    background: #222; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+    transition: transform 0.3s ease; 
+    border: 1px solid #333; 
+}
+.menu-card:hover { transform: translateY(-8px); border-color: #d4af37; }
+
+.card-image { width: 100%; height: 250px; overflow: hidden; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;}
+.menu-card:hover .card-image img { transform: scale(1.05); }
+
+.card-content { padding: 20px; }
+.drink-title { font-size: 1.5rem; color: #d4af37; margin-bottom: 10px; }
+.drink-ingredients { font-size: 0.95rem; color: #bbb; margin-bottom: 25px; min-height: 45px; }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #444; padding-top: 15px; }
+.price { font-weight: bold; font-size: 1.2rem; }
+
+/* --- برچسب‌ها --- */
+.badge { padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; }
+.available { background-color: rgba(42, 157, 143, 0.15); color: #2a9d8f; border: 1px solid #2a9d8f; }
+.out-of-stock { background-color: rgba(230, 57, 70, 0.15); color: #e63946; border: 1px solid #e63946; }
+
+/* --- صفحه جزئیات --- */
+.detail-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 40px;
+    border: 1px solid #444;
+}
+.detail-image { flex: 1; min-width: 300px; }
+.detail-image img { width: 100%; height: 100%; object-fit: cover; }
+.detail-info { flex: 1; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.detail-info .price { font-size: 1.8rem; color: #fff; margin-bottom: 20px; }
+.ingredients-box { background: #1a1a1a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-right: 4px solid #d4af37; }
+.ingredients-box strong { color: #d4af37; }
+.status-box { margin-bottom: 30px; }
+
+/* --- فرم‌ها --- */
+.form-wrapper {
+    background: #222;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #444;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: #d4af37; font-weight: bold; }
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+}
+.form-group input:focus { outline: none; border-color: #d4af37; }
+.form-group input[type="file"] { padding: 10px; background: #1a1a1a; }
